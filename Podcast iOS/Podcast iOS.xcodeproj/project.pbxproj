@@ -23,6 +23,15 @@
 		5AF6A7702614B96C00E32251 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6A76F2614B96C00E32251 /* APIService.swift */; };
 		5AF6A7752614C16B00E32251 /* PodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF6A7742614C16B00E32251 /* PodcastCell.xib */; };
 		5AF6A7782614C31200E32251 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6A7772614C31200E32251 /* PodcastCell.swift */; };
+		5AF6A7812614D2FB00E32251 /* EpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6A77F2614D2FB00E32251 /* EpisodesController.swift */; };
+		5AF6A7822614D2FB00E32251 /* EpisodesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF6A7802614D2FB00E32251 /* EpisodesController.xib */; };
+		5AF6A7852614D72700E32251 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6A7842614D72700E32251 /* Episode.swift */; };
+		5AF6A78F2614E6AD00E32251 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6A78D2614E6AD00E32251 /* EpisodeCell.swift */; };
+		5AF6A7902614E6AD00E32251 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF6A78E2614E6AD00E32251 /* EpisodeCell.xib */; };
+		5AF6A79326151E8200E32251 /* PlayerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF6A79226151E8200E32251 /* PlayerDetailsView.xib */; };
+		5AF6A79626151FA600E32251 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6A79526151FA600E32251 /* PlayerDetailsView.swift */; };
+		5AF7536F261770DA0006CD38 /* CMTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7536E261770DA0006CD38 /* CMTime+Extension.swift */; };
+		5AF753732617711C0006CD38 /* RSSFeed+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF753722617711C0006CD38 /* RSSFeed+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +53,15 @@
 		5AF6A76F2614B96C00E32251 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5AF6A7742614C16B00E32251 /* PodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCell.xib; sourceTree = "<group>"; };
 		5AF6A7772614C31200E32251 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
+		5AF6A77F2614D2FB00E32251 /* EpisodesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesController.swift; sourceTree = "<group>"; };
+		5AF6A7802614D2FB00E32251 /* EpisodesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesController.xib; sourceTree = "<group>"; };
+		5AF6A7842614D72700E32251 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		5AF6A78D2614E6AD00E32251 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		5AF6A78E2614E6AD00E32251 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
+		5AF6A79226151E8200E32251 /* PlayerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailsView.xib; sourceTree = "<group>"; };
+		5AF6A79526151FA600E32251 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		5AF7536E261770DA0006CD38 /* CMTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+Extension.swift"; sourceTree = "<group>"; };
+		5AF753722617711C0006CD38 /* RSSFeed+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RSSFeed+Extension.swift"; sourceTree = "<group>"; };
 		7AACD50359021FA1161835A9 /* Pods-Podcast iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podcast iOS.release.xcconfig"; path = "Target Support Files/Pods-Podcast iOS/Pods-Podcast iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A9A846A6D8255F46EA10F6A1 /* Pods-Podcast iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podcast iOS.debug.xcconfig"; path = "Target Support Files/Pods-Podcast iOS/Pods-Podcast iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +99,7 @@
 		5AF6A6CC26118E0600E32251 /* Podcast iOS */ = {
 			isa = PBXGroup;
 			children = (
+				5AF7536D261770CC0006CD38 /* Extensions */,
 				5AF6A7732614C15900E32251 /* Views */,
 				5AF6A76E2614B94600E32251 /* Api */,
 				5AF6A6EE2612D12A00E32251 /* Models */,
@@ -93,7 +112,6 @@
 				5AF6A6D826118E0700E32251 /* LaunchScreen.storyboard */,
 				5AF6A6DB26118E0700E32251 /* Info.plist */,
 				5AF6A6E226118EE800E32251 /* MainTabBarController.swift */,
-				5AF6A6E52612D00800E32251 /* UIViewController+Extension.swift */,
 			);
 			path = "Podcast iOS";
 			sourceTree = "<group>";
@@ -103,6 +121,8 @@
 			children = (
 				5AF6A6E92612D0DC00E32251 /* PodcastsSearchController.swift */,
 				5AF6A6EA2612D0DC00E32251 /* PodcastsSearchController.xib */,
+				5AF6A77F2614D2FB00E32251 /* EpisodesController.swift */,
+				5AF6A7802614D2FB00E32251 /* EpisodesController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF6A6EF2612D13F00E32251 /* Podcast.swift */,
+				5AF6A7842614D72700E32251 /* Episode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,8 +150,22 @@
 			children = (
 				5AF6A7742614C16B00E32251 /* PodcastCell.xib */,
 				5AF6A7772614C31200E32251 /* PodcastCell.swift */,
+				5AF6A78D2614E6AD00E32251 /* EpisodeCell.swift */,
+				5AF6A78E2614E6AD00E32251 /* EpisodeCell.xib */,
+				5AF6A79226151E8200E32251 /* PlayerDetailsView.xib */,
+				5AF6A79526151FA600E32251 /* PlayerDetailsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5AF7536D261770CC0006CD38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AF6A6E52612D00800E32251 /* UIViewController+Extension.swift */,
+				5AF7536E261770DA0006CD38 /* CMTime+Extension.swift */,
+				5AF753722617711C0006CD38 /* RSSFeed+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ACF6857099CC367FE5B6BEAC /* Pods */ = {
@@ -210,7 +245,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF6A6EC2612D0DC00E32251 /* PodcastsSearchController.xib in Resources */,
+				5AF6A7902614E6AD00E32251 /* EpisodeCell.xib in Resources */,
+				5AF6A7822614D2FB00E32251 /* EpisodesController.xib in Resources */,
 				5AF6A6DA26118E0700E32251 /* LaunchScreen.storyboard in Resources */,
+				5AF6A79326151E8200E32251 /* PlayerDetailsView.xib in Resources */,
 				5AF6A6D726118E0700E32251 /* Assets.xcassets in Resources */,
 				5AF6A6D526118E0600E32251 /* Main.storyboard in Resources */,
 				5AF6A7752614C16B00E32251 /* PodcastCell.xib in Resources */,
@@ -267,15 +305,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF6A6D226118E0600E32251 /* ViewController.swift in Sources */,
+				5AF6A7852614D72700E32251 /* Episode.swift in Sources */,
 				5AF6A76B2613E0E600E32251 /* Service.swift in Sources */,
 				5AF6A7782614C31200E32251 /* PodcastCell.swift in Sources */,
+				5AF7536F261770DA0006CD38 /* CMTime+Extension.swift in Sources */,
 				5AF6A6F02612D13F00E32251 /* Podcast.swift in Sources */,
+				5AF753732617711C0006CD38 /* RSSFeed+Extension.swift in Sources */,
+				5AF6A7812614D2FB00E32251 /* EpisodesController.swift in Sources */,
+				5AF6A79626151FA600E32251 /* PlayerDetailsView.swift in Sources */,
 				5AF6A6CE26118E0600E32251 /* AppDelegate.swift in Sources */,
 				5AF6A6EB2612D0DC00E32251 /* PodcastsSearchController.swift in Sources */,
 				5AF6A6E326118EE800E32251 /* MainTabBarController.swift in Sources */,
 				5AF6A6E62612D00800E32251 /* UIViewController+Extension.swift in Sources */,
 				5AF6A7702614B96C00E32251 /* APIService.swift in Sources */,
 				5AF6A6D026118E0600E32251 /* SceneDelegate.swift in Sources */,
+				5AF6A78F2614E6AD00E32251 /* EpisodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
