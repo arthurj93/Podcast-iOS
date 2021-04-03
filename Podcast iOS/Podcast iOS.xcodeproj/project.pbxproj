@@ -32,6 +32,9 @@
 		5AF6A79626151FA600E32251 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF6A79526151FA600E32251 /* PlayerDetailsView.swift */; };
 		5AF7536F261770DA0006CD38 /* CMTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7536E261770DA0006CD38 /* CMTime+Extension.swift */; };
 		5AF753732617711C0006CD38 /* RSSFeed+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF753722617711C0006CD38 /* RSSFeed+Extension.swift */; };
+		5AF7539E2618EEBB0006CD38 /* PlayerDetailsView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7539D2618EEBB0006CD38 /* PlayerDetailsView+Gestures.swift */; };
+		5AF753A12618EF9A0006CD38 /* PlayerDetailsView+AVKitActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF753A02618EF9A0006CD38 /* PlayerDetailsView+AVKitActions.swift */; };
+		5AF753A42618F56D0006CD38 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF753A32618F56D0006CD38 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		5AF6A79526151FA600E32251 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		5AF7536E261770DA0006CD38 /* CMTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+Extension.swift"; sourceTree = "<group>"; };
 		5AF753722617711C0006CD38 /* RSSFeed+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RSSFeed+Extension.swift"; sourceTree = "<group>"; };
+		5AF7539D2618EEBB0006CD38 /* PlayerDetailsView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDetailsView+Gestures.swift"; sourceTree = "<group>"; };
+		5AF753A02618EF9A0006CD38 /* PlayerDetailsView+AVKitActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDetailsView+AVKitActions.swift"; sourceTree = "<group>"; };
+		5AF753A32618F56D0006CD38 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		7AACD50359021FA1161835A9 /* Pods-Podcast iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podcast iOS.release.xcconfig"; path = "Target Support Files/Pods-Podcast iOS/Pods-Podcast iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A9A846A6D8255F46EA10F6A1 /* Pods-Podcast iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Podcast iOS.debug.xcconfig"; path = "Target Support Files/Pods-Podcast iOS/Pods-Podcast iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +160,8 @@
 				5AF6A78E2614E6AD00E32251 /* EpisodeCell.xib */,
 				5AF6A79226151E8200E32251 /* PlayerDetailsView.xib */,
 				5AF6A79526151FA600E32251 /* PlayerDetailsView.swift */,
+				5AF7539D2618EEBB0006CD38 /* PlayerDetailsView+Gestures.swift */,
+				5AF753A02618EF9A0006CD38 /* PlayerDetailsView+AVKitActions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				5AF6A6E52612D00800E32251 /* UIViewController+Extension.swift */,
 				5AF7536E261770DA0006CD38 /* CMTime+Extension.swift */,
 				5AF753722617711C0006CD38 /* RSSFeed+Extension.swift */,
+				5AF753A32618F56D0006CD38 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 			files = (
 				5AF6A6D226118E0600E32251 /* ViewController.swift in Sources */,
 				5AF6A7852614D72700E32251 /* Episode.swift in Sources */,
+				5AF753A12618EF9A0006CD38 /* PlayerDetailsView+AVKitActions.swift in Sources */,
 				5AF6A76B2613E0E600E32251 /* Service.swift in Sources */,
 				5AF6A7782614C31200E32251 /* PodcastCell.swift in Sources */,
 				5AF7536F261770DA0006CD38 /* CMTime+Extension.swift in Sources */,
@@ -319,6 +329,8 @@
 				5AF6A6E62612D00800E32251 /* UIViewController+Extension.swift in Sources */,
 				5AF6A7702614B96C00E32251 /* APIService.swift in Sources */,
 				5AF6A6D026118E0600E32251 /* SceneDelegate.swift in Sources */,
+				5AF7539E2618EEBB0006CD38 /* PlayerDetailsView+Gestures.swift in Sources */,
+				5AF753A42618F56D0006CD38 /* UIApplication+Extension.swift in Sources */,
 				5AF6A78F2614E6AD00E32251 /* EpisodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

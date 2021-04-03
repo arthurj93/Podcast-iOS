@@ -75,8 +75,7 @@ extension EpisodesController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let episode = episodes[indexPath.row]
-        let mainTabBarController = UIApplication.shared.windows.filter { $0.isKeyWindow}.first?.rootViewController as? MainTabBarController
-        mainTabBarController?.maximizePlayerDetails(episode: episode)
+        UIApplication.mainTabBarController()?.maximizePlayerDetails(episode: episode)
 //        let episode = episodes[indexPath.row]
 //        let window = UIApplication.shared.windows.filter { $0.isKeyWindow}.first
 //        let playerDetailsView = PlayerDetailsView.initFromNib()

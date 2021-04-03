@@ -13,6 +13,7 @@ class MainTabBarController: UITabBarController {
 
     var maximizedTopAnchorConstraints: NSLayoutConstraint!
     var minimizedTopAnchorConstraints: NSLayoutConstraint!
+    var bottomAnchorConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,11 @@ class MainTabBarController: UITabBarController {
         minimizedTopAnchorConstraints = playerDetailsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
         maximizedTopAnchorConstraints.isActive = true
 
+        bottomAnchorConstraint = playerDetailsView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: view.frame.height)
+        bottomAnchorConstraint.isActive = true
         playerDetailsView.translatesAutoresizingMaskIntoConstraints = false
         playerDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         playerDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        playerDetailsView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 
     func setupViewControllers() {
@@ -45,8 +47,8 @@ class MainTabBarController: UITabBarController {
     }
 
     @objc func minimizePlayerDetails() {
-
         maximizedTopAnchorConstraints.isActive = false
+        bottomAnchorConstraint.constant = view.frame.height
         minimizedTopAnchorConstraints.isActive = true
 
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut) {
@@ -55,13 +57,13 @@ class MainTabBarController: UITabBarController {
             self.playerDetailsView.maximizePlayerView.alpha = 0
             self.playerDetailsView.miniPlayerView.alpha = 1
         }
-
     }
 
     func maximizePlayerDetails(episode: Episode? = nil) {
-        maximizedTopAnchorConstraints.isActive = true
         minimizedTopAnchorConstraints.isActive = false
+        maximizedTopAnchorConstraints.isActive = true
         maximizedTopAnchorConstraints.constant = 0
+        bottomAnchorConstraint.constant = 0
 
         if episode != nil {
             playerDetailsView.episode = episode
