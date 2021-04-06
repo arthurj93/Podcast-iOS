@@ -6,34 +6,32 @@
 //
 
 import Foundation
-import Moya
+import Alamofire
 import FeedKit
-
-struct SearchResults: Decodable {
-    let resultCount: Int
-    let results: [Podcast]
-}
 
 class APIService {
 
+    typealias EpisodeDownloadCompleteTuble = (fileUrl: String, episodeTitle: String)
     static let shared = APIService()
-
-    func fetchPodcast(text: String, completion: @escaping (Result<[Podcast], Error>) -> Void) {
-        let provider = MoyaProvider<ItunesService>()
-
-        provider.request(.search(name: text)) { result in
-            switch result {
-            case .success(let response):
+    
+    let baseURL = "https://itunes.apple.com/search"
+    
+    func fetchPodcast(searchText: String, completionHandler: @escaping (Result<[Podcast], Error>) -> ()) {
+        let parameters = ["term": searchText, "media": "podcast"]
+        let request = AF.request(baseURL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil)
+        request.responseData(completionHandler: { (response) in
+            switch response.result {
+            case .success(let data):
                 do {
-                    let searchResult = try JSONDecoder().decode(SearchResults.self, from: response.data)
-                    completion(.success(searchResult.results))
+                    let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
+                    completionHandler(.success(searchResult.results))
                 } catch let decodeError {
-                    completion(.failure(decodeError))
+                    completionHandler(.failure(decodeError))
                 }
             case .failure(let apiError):
-                completion(.failure(apiError))
+                completionHandler(.failure(apiError))
             }
-        }
+        })
     }
 
     func fetchEpisodes(feedUrl: String, completion: @escaping ([Episode]) -> ()) {
@@ -52,5 +50,41 @@ class APIService {
             }
         }
     }
+    
+    func downloadEpisode(episode: Episode) {
+        
+        let downloadRequest = DownloadRequest.suggestedDownloadDestination()
+        
+        let progressQueue = DispatchQueue(label: "com.alamofire.progressQueue", qos: .utility)
 
+        AF.download(episode.streamUrl, to: downloadRequest)
+            .downloadProgress(queue: progressQueue) { progress in
+                print("Download Progress: \(progress.fractionCompleted)")
+                
+                NotificationCenter.default.post(
+                    name: .downloadProgress,
+                    object: nil,
+                    userInfo: ["title": episode.title, "progress": progress.fractionCompleted]
+                )
+            }
+            .responseData { response in
+                let episodeDownloadComplete = EpisodeDownloadCompleteTuble(fileUrl: response.fileURL?.absoluteString ?? "", episode.title)
+                NotificationCenter.default.post(name: .downloadComplete, object: episodeDownloadComplete, userInfo: nil)
+                var downloadedEpisodes = UserDefaults.standard.downloadedEpisodes()
+                guard let index = downloadedEpisodes.firstIndex(where: {$0.title == episode.title && $0.author == episode.author}) else { return }
+                downloadedEpisodes[index].fileUrl = response.fileURL?.absoluteString
+                do {
+                    let data = try JSONEncoder().encode(downloadedEpisodes)
+                    UserDefaults.standard.setValue(data, forKey: UserDefaults.downloadedEpisodesKey)
+                } catch let err {
+                    print("Failed to encode downloaded episodes with file url update:", err)
+                }
+            }
+    }
+    
+}
+
+extension Notification.Name {
+    static let downloadProgress = NSNotification.Name("downloadProgress")
+    static let downloadComplete = NSNotification.Name("downloadComplete")
 }

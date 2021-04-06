@@ -6,7 +6,7 @@ target 'Podcast iOS' do
   use_frameworks!
 
   # Pods for Podcast iOS
-pod 'Moya', '~> 14.0'
+pod 'Alamofire', '~> 5.2'
 pod 'SDWebImage', '~> 5.0'
 pod 'FeedKit', '~> 9.0'
 end

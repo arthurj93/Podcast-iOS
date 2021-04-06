@@ -17,7 +17,6 @@ extension RSSFeed {
                 episode.imageUrl = imageUrl
             }
             episodes.append(episode)
-            print(feedItem.title ?? "")
         }
         return episodes
     }

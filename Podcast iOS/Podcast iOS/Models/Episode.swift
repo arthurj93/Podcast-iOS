@@ -8,13 +8,14 @@
 import Foundation
 import FeedKit
 
-struct Episode {
-    let title: String
+struct Episode: Codable {
+    var title: String
     let pubDate: Date
     let description: String
-    var imageUrl: String?
     var author: String
     let streamUrl: String
+    var fileUrl: String?
+    var imageUrl: String?
 
     init(feedItem: RSSFeedItem) {
         self.title = feedItem.title ?? ""
@@ -24,4 +25,9 @@ struct Episode {
         self.author = feedItem.iTunes?.iTunesAuthor ?? ""
         self.streamUrl = feedItem.enclosure?.attributes?.url ?? ""
     }
+}
+
+enum ChangeEpisode: Int {
+    case foward = 1
+    case backward = -1
 }

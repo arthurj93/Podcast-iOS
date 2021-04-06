@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Moya
 
 class PodcastsSearchController: UITableViewController {
 
@@ -92,7 +91,7 @@ extension PodcastsSearchController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-            APIService.shared.fetchPodcast(text: searchText) { result in
+            APIService.shared.fetchPodcast(searchText: searchText) { result in
                 switch result {
                 case .success(let podcasts):
                     self.podcasts = podcasts
